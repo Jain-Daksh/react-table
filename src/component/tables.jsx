@@ -157,7 +157,6 @@
 
 import React from 'react'
 function Table(props) {
-  console.log(props.users)
   return (
     <div>
       <table>
@@ -186,8 +185,11 @@ function Table(props) {
               <td>
                 {items.origin}
               </td>
+              {/* <td>delete</td> */}
+              
             </tr>
           ))}
+          
         </tbody>
       </table>
     </div>

@@ -36,10 +36,13 @@ import React from "react";
 import Cars from "./component/Cars";
 import User from "./component/User";
 import './App.css';
+import BasicTable from "./component/yt/Basic table/BasicTable";
 function App() {
   return(
     <div className="app">
       <Cars />
+
+      <BasicTable />
     </div>
   )
 

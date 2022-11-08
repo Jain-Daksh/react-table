@@ -402,6 +402,20 @@ function AddAndDelete(props) {
     );
   };
 
+
+  const updateMyData = (rowIndex, columnId, value) => {
+    setRecords(old =>
+      old.map((row, index) => {
+        if (index === rowIndex) {
+          return {
+            ...old[rowIndex],
+            [columnId]: value,
+          }
+        }
+        return row
+      })
+    )
+  }
   return (
 
     <div>
@@ -418,6 +432,7 @@ function AddAndDelete(props) {
         <input
           type="text"
           name="name"
+          required="required" 
           value={newRecord.name || ""}
           onChange={handleChange}
           placeholder="name "
@@ -429,6 +444,7 @@ function AddAndDelete(props) {
           value={newRecord.year || ""}
           onChange={handleChange}
           placeholder="year"
+          required="required" 
         />
         <input
           type="text"
@@ -436,14 +452,16 @@ function AddAndDelete(props) {
           value={newRecord.origin || ""}
           onChange={handleChange}
           placeholder="origin"
+          required="required" 
         />
         <br />
 
 
         <input type="submit" value="Submit" />
       </form>
+      {/* <Table cars={search(carsRecord)} updateMyData={updateMyData} /> */}
 
-      <Table cars={search(carsRecord)} />
+      <Table cars={search(carsRecord)} s />
 
     </div>
 
